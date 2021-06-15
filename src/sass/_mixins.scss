@@ -1,0 +1,58 @@
+@mixin buttonEffects($color, $light) {
+    &:hover, &:active {
+        background-color: scale-color($color, $lightness: $light);
+    }
+
+    &:focus {
+        outline-style: solid;
+        outline-color: transparent;
+        background-color: scale-color($color, $lightness: $light - 10);
+    }
+}
+
+
+//media qurties
+
+// Small devices
+@mixin sm {
+    @media (max-width: #{$screen-sm-max}) {
+        @content;
+    }
+ }
+ 
+ // Medium devices
+ @mixin md {
+    @media (max-width: #{$screen-md-max}) {
+        @content;
+    }
+ }
+ 
+ // Large devices
+ @mixin lg {
+    @media (max-width: #{$screen-lg-max}) {
+        @content;
+    }
+ }
+ 
+ // Extra large devices
+ @mixin xl {
+    @media (max-width: #{$screen-xl-max}) {
+        @content;
+    }
+ }
+
+ // Custom devices
+@mixin rwd($screen) {
+    @media (max-width: $screen+'px') {
+        @content;
+    }
+ }
+
+
+// box-shadow generator
+
+@mixin boxShadow($color, $opacity, $xAxis, $yAxis, $blur, $spread) {
+    box-shadow: $xAxis $yAxis $blur $spread rgba($color, $opacity);
+    -webkit-box-shadow: $xAxis $yAxis $blur $spread rgba($color, $opacity);
+    -moz-box-shadow: $xAxis $yAxis $blur $spread rgba($color, $opacity);
+}

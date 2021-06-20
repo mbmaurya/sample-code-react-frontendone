@@ -1,0 +1,94 @@
+.container {
+
+    .unitColor {
+        color: $CORNFLOWER_BLUE;
+        font-weight: bold;
+    }
+
+    .unitColor1 {
+        color: $WEWAK;
+        font-weight: bold;
+    }
+
+    .results {
+        padding: 1.1rem 2rem;
+        background: $WHITE_SHADE;
+        border-radius: 1rem;
+
+        .resultsData {
+            line-height: 4;
+            border-top: 1px solid;
+
+            &:first-of-type {
+                border-top: none;
+            }
+
+            .unitName {
+                opacity: 0.4;
+            }
+
+            .unitNo {
+                font-weight: bold;
+            }
+
+            progress {
+                //-webkit-transform: rotate(-90deg);
+                color: linear-gradient($CORNFLOWER_BLUE 50%, $MISCHKA 50%);
+                vertical-align: middle;
+                margin: 0rem 1.5rem;
+                height: 8px;
+                width: 5.8rem !important;
+            }
+        }
+
+        .col {
+            &:last-of-type {
+                text-align: right;
+            }
+        }
+    }
+
+    p{
+        font-weight: bold;
+        display: inline-flex;
+
+        span {
+            margin-left: 1rem;
+        }
+    }
+
+    .timeSpent {
+        background: $WHITE;
+        padding: 1rem;
+        border-radius: 1rem;
+
+        .resultHeading {
+            padding: 0rem 1.5rem;
+            .col {
+                &:last-of-type {
+                    text-align: right;
+                }
+            }
+        }
+
+        tr {
+            th {
+                color: $GREY;
+            }
+            
+            &:first-of-type {
+                line-height: 4;
+            }
+        }
+        
+        .resultsProgress {
+            transform: matrix(0, -1, -1, 0, 0, 0);
+            background: linear-gradient(to right, red 20%, blue 20%, blue 50%,yellow 50%,yellow 60% ,green 0);
+            vertical-align: middle;
+            margin: 0rem 1.5rem;
+            height: 5px;
+            width: 5.8rem !important;
+            border-radius: 5px;
+        }
+    }
+}

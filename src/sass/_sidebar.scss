@@ -1,0 +1,48 @@
+.sidebarCol {
+    height: auto;
+    background-color: snow;
+    padding-right: 0px;
+
+    .alignUpgrade {
+        text-align: center;
+        margin-left: 1rem;
+    }
+
+    table {
+        margin: auto;
+
+        tr {
+            line-height: 4;
+            
+            &:first-of-type {
+                //line-height: 8rem;
+                font-size: 27px;
+                font-weight: bold;
+            }
+
+            .logoImg {
+                width: 2.5rem;
+            }
+
+            img {
+                display: list-item;
+                line-height: 8;
+            }
+        }   
+    }
+
+    .upgradeContent {
+        @include cards($LIGHT_BLUE);
+        margin-bottom: 2rem;
+        margin-top: 5rem;
+        text-align: center;
+        width: 80%;
+        .imgData {
+            width: auto;
+            // height: 112px;
+            // width: 105px;
+            // left: 125px;
+            // top: 778px;
+        }
+    }
+}

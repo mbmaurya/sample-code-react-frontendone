@@ -1,9 +1,20 @@
 .button {
     display: inline-block;
-    background-color: $LAVENDER;
-    padding: 1rem;
-    border-radius: 0.75rem;
+    background-color: $CORNFLOWER_BLUE;
+    border: none;
+    padding: 1rem 1.75rem;
+    border-radius: 1rem;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1rem;
+    text-align: center;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     cursor: pointer;
+    text-decoration: none;
+    transition: .2s ease-in-out;
 }
 
 .button-nav {

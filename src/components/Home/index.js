@@ -5,6 +5,9 @@ import Results from '../../Results/index.js';
 import Courses from '../../Courses/index.js';
 import imgGreeting from '../../images/greetingImg.svg';
 import search from '../../images/search.svg';
+// import { Col, Container, Row } from 'react-bootstrap';  
+import Sidebar from '../Sidebar/Sidebar.js';
+import Profile from '../../Profile/index.js';
 
 function Home() {
     const CTAheading = {
@@ -19,19 +22,24 @@ function Home() {
 
     return (
         <React.Fragment>
-            <Container>
-                <section className="greetings">
-                    <Container>
-                        <div className="alignDiv">
-                            <span className="dateClass">20 Sep 2020, Monday</span>
-                            <span className="search"><img src={search} alt="" /></span>
-                        </div>
-                    </Container>
-                </section>
-                <Greetings heading={CTAheading} content={CTAcontent} image={imgGreeting} />
-                <Results />
-                <Courses />
-            </Container>
+            <Row className="rowClass">
+                <Sidebar />
+                <Container className="col-lg-7 containerWidth">
+                    <section className="greetings">
+                        <Container>
+                            <div className="alignDiv">
+                                <span className="dateClass">20 Sep 2020, Monday</span>
+                                <span className="search"><img src={search} alt="" /></span>
+                            </div>
+                        </Container>
+                    </section>
+                    <Greetings heading={CTAheading} content={CTAcontent} image={imgGreeting} />
+                    <Results />
+                    <Courses />
+                </Container>
+                <Profile />
+            </Row>
+            {/*  */}
         </React.Fragment>
     );
 }

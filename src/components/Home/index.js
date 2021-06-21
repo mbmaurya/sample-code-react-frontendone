@@ -39,7 +39,6 @@ function Home() {
                 </Container>
                 <Profile />
             </Row>
-            {/*  */}
         </React.Fragment>
     );
 }

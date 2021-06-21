@@ -1,5 +1,10 @@
 
 .greetings {
+
+    .para-regular-16 {
+        font-weight: normal;
+    }
+
     .greetContainer {
         background-color: $AMOUR;
         border-radius: 1.1rem;
@@ -15,9 +20,9 @@
 
         .align_img {
             position: absolute;
-            top: -3.4rem;
-            width: 208px;
-            height: 210px;
+            top: -4.2rem;
+            width: 160px;
+            height: 165px;
         }
     }
 

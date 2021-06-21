@@ -11,7 +11,6 @@
 }
 
 .sectionHeading {
-    margin-bottom: 1rem;
     .col {
         &:last-of-type {
             text-align: right;
@@ -23,12 +22,16 @@
     .row {
         margin: 0rem;
 
+        .placeCode {
+            place-self: center;
+        }
+
         .childContent {
             margin: 0rem 1rem;
             .pContent1 {
                 @extend .pContent;
                 opacity: 0.8;
-                font-size: 14px;
+                font-size: 12px;
             }
             
             .pContent2 {
@@ -37,7 +40,7 @@
         }
 
         .cardChild1 {
-            padding: 1.5rem !important;
+            padding: 1rem !important;
             color: $WHITE;
             @include cards($WHITE_RGBA);
         }

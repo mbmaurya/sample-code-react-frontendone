@@ -19,7 +19,7 @@ function Home() {
 
     return (
         <React.Fragment>
-            <Container>
+            <Container className="col-lg-7">
                 <section className="greetings">
                     <Container>
                         <div className="alignDiv">

@@ -11,12 +11,12 @@
     }
 
     .results {
-        padding: 1.1rem 2rem;
+        padding: 1.1rem 1.5rem;
         background: $WHITE_SHADE;
         border-radius: 1rem;
 
         .resultsData {
-            line-height: 4;
+            line-height: 4.5;
             border-top: 1px solid;
 
             &:first-of-type {
@@ -35,7 +35,7 @@
                 //-webkit-transform: rotate(-90deg);
                 color: linear-gradient($CORNFLOWER_BLUE 50%, $MISCHKA 50%);
                 vertical-align: middle;
-                margin: 0rem 1.5rem;
+                margin: 0rem 0.5rem;
                 height: 8px;
                 width: 5.8rem !important;
             }

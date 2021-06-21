@@ -48,7 +48,7 @@ function Courses() {
                         {Array.from(courseList).map((element, index) => (
                             <div className={element.className}>
                                 <Row>
-                                    <div><span className="cardChild1">{element.courseCode}</span></div>
+                                    <div class="placeCode"><span className="cardChild1">{element.courseCode}</span></div>
                                     <div className="childContent">
                                         <p className="pContent1">{element.course}</p><br />
                                         <p className="pContent2">{element.topic}</p>

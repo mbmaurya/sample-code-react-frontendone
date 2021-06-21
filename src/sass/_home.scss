@@ -1,0 +1,46 @@
+// .section-connect {
+//     .section-heading {
+//         color: $WEWAK;
+//         text-align: left;
+//         margin-bottom: 1.5rem;
+//     }
+// }
+
+section {
+    margin-top: 2rem;
+    background-color: $LIGHT_BLUE;
+
+    &:last-of-type {
+        margin-bottom: 2rem;
+    }
+}
+
+@mixin cards($color) {
+    display: inline-block;
+    background-color: $color;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    cursor: pointer;
+}
+
+.search {
+    @include cards($LAVENDER);
+    padding: 0.9rem;
+
+    img {
+        height: 15px;
+    }
+}
+
+.container {
+    padding: 0px;
+
+    .alignDiv {
+        text-align: right;
+        
+        .dateClass {
+            font-weight: 500;
+            margin-right: 2rem;
+        }
+    }
+}

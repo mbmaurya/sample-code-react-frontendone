@@ -1,0 +1,85 @@
+.sidebarCol {
+    height: auto;
+    background-color: snow;
+    padding-right: 0px;
+
+    .alignUpgrade {
+        background-color: #f5f5fb;
+        padding: 1.875rem;
+        border-radius: 1rem;
+        text-align: center;
+        margin-top: 55%;
+        width: 78%;
+        margin-left: 14%;
+
+        span {
+            .upgradeImg {
+                margin-top: -4.375rem; /* -70px */
+                width: 6.5rem;
+          }
+        }
+          
+        p {
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            padding-top: 0.5rem;
+            color: #a2a2c2;
+            font-weight: 400;
+            margin-bottom: 10%;
+            
+            span {
+                font-weight: 600;
+                color: #111026;
+            }
+        }
+    }
+
+    table {
+        margin: auto;
+        tr {
+            cursor: pointer;
+            line-height: 4;
+            &:first-of-type {
+                //line-height: 8rem;
+                font-size: 27px;
+                font-weight: bold;
+
+                .closeBtn{
+                    position: absolute;
+                    top: -30px;
+                    right: 18px;
+                    font-size: 26px;
+                }
+            }
+
+            .logoImg {
+                width: 2.5rem;
+            }
+
+            img {
+                display: list-item;
+                line-height: 8;
+            }
+        }   
+    }
+
+    // .upgradeContent {
+    //     @include cards($LIGHT_BLUE);
+    //     margin-bottom: 2rem;
+    //     margin-top: 5rem;
+    //     text-align: center;
+    //     width: 80%;
+    //     .imgData {
+    //         width: auto;
+    //         // height: 112px;
+    //         // width: 105px;
+    //         // left: 125px;
+    //         // top: 778px;
+    //     }
+    // }
+}
+
+@include lg{
+    
+}

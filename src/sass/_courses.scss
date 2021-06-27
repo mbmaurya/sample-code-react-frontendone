@@ -1,0 +1,66 @@
+.pContent {
+    line-height: 2rem;
+    margin: 0rem;
+    color: $WHITE;
+    font-weight: 400;
+}
+
+.coursesData {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sectionHeading {
+    margin-bottom: 1rem;
+    .col {
+        &:last-of-type {
+            text-align: right;
+        }
+    }
+}
+
+.coursesCard {
+    .row {
+        margin: 0rem;
+
+        .childContent {
+            margin: 0rem 1rem;
+            .pContent1 {
+                @extend .pContent;
+                opacity: 0.8;
+                font-size: 14px;
+            }
+            
+            .pContent2 {
+                @extend .pContent;
+            }
+        }
+
+        .cardChild1 {
+            padding: 1.5rem !important;
+            color: $WHITE;
+            @include cards($WHITE_RGBA);
+        }
+
+        .arrow {
+            display: flex;
+            flex-direction: column-reverse;
+            margin-left: 4rem;
+        }
+    }
+}
+
+.coursesCard1 {
+    @extend .coursesCard;
+    @include cards($BLUE_MAGENTA);
+}
+
+.coursesCard2 {
+    @extend .coursesCard;
+    @include cards($MEDIUM_LIGHT_BLUE);
+}
+
+.coursesCard3 {
+    @extend .coursesCard;
+    @include cards($WEWAK);
+}

@@ -1,0 +1,90 @@
+
+.profContent {
+    line-height: 1.8rem;
+    margin: 0rem;
+}
+
+.profileCont {
+    width: 24rem;
+    height: auto;
+    background-color: snow;
+    padding: 2rem;
+    margin: initial;
+
+    .profileCard {
+        .row {
+            margin: 2rem 0rem;
+    
+            .remWidth {
+                width: auto !important;
+            }
+
+            .childContent {
+                margin: 0rem 1.5rem;
+                margin-right: 0px;
+                width: 7.7rem;
+
+                .pContent1 {
+                    @extend .profContent;
+                    font-size: 11px;
+                    color: $BLACK_RUSSIAN;
+                    font-weight: bold;
+                }
+                
+                .pContent2 {
+                    @extend .profContent;
+                    font-size: 10px;
+                    color: $GREY;
+                }
+            }
+    
+            .placeItems {
+                place-self: center;
+                padding-left: 0px;
+                .cardChild1 {
+                    padding: 1rem !important;
+                    color: $BLACK_RUSSIAN;
+                    @include cards($LIGHT_BLUE);
+                }
+            }
+    
+            .courseProgress {
+                padding: 0rem 0.7rem;
+                place-self: center;
+                
+                progress {
+                    width: 6rem;
+                }
+            }
+
+            .arrow {
+                display: flex;
+                flex-direction: column-reverse;
+                margin-left: 4rem;
+            }
+        }
+    }
+
+    .row {
+        .col {
+            &:last-of-type{
+                text-align: right;
+                place-self: center;
+            }
+        }
+    }
+
+    .alignProfile {
+        text-align: center;
+
+        img {
+            width: 169px;
+            height: 171px;
+        }
+
+        h5 {
+            color: $GREY;
+            font-weight: normal;
+        }
+    }
+}

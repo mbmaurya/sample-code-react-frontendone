@@ -1,7 +1,14 @@
 // common scss rules
 @import "../../node_modules/bootstrap/scss/bootstrap-grid.scss";
+@import './mixins';
+@import './breakpoints';
 @import './normalize';
 @import './colors';
-@import './breakpoints';
-@import './mixins';
+@import './home';
+@import './button';
+@import './sidebar';
+@import './profile';
+@import './greetings';
+@import './results';
+@import './courses';
 @import './typography';

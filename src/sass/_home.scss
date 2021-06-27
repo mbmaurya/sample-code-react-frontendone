@@ -19,7 +19,7 @@ section {
     display: inline-block;
     background-color: $color;
     padding: 1rem;
-    border-radius: 0.75rem;
+    border-radius: 1rem;
     cursor: pointer;
 }
 
@@ -42,5 +42,11 @@ section {
             font-weight: 500;
             margin-right: 2rem;
         }
+    }
+}
+
+@include sm {
+    .col-lg-7 {
+        margin: 1rem;
     }
 }

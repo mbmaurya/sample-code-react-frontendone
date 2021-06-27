@@ -38,6 +38,12 @@
     }
 }
 
+@include sm {
+    .alignDiv {
+        text-align: center !important;
+    }
+}
+
 // @include lg {
 //     .greetings {
 //         p {

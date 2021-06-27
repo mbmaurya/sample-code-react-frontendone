@@ -1,5 +1,8 @@
 .container {
 
+    // .col-lg-5 {
+    //   width: auto;
+    // }
     .unitColor {
         color: $CORNFLOWER_BLUE;
         font-weight: bold;
@@ -11,7 +14,7 @@
     }
 
     .results {
-        padding: 1.1rem 1.5rem;
+        padding: 1.1rem 0.9rem;
         background: $WHITE_SHADE;
         border-radius: 1rem;
 
@@ -23,12 +26,15 @@
                 border-top: none;
             }
 
-            .unitName {
-                opacity: 0.4;
-            }
+            .unitDetails {
+              padding-right: 0%;
+              .unitName {
+                  opacity: 0.4;
+              }
 
-            .unitNo {
-                font-weight: bold;
+              .unitNo {
+                  font-weight: bold;
+              }
             }
 
             progress {
@@ -37,11 +43,23 @@
                 vertical-align: middle;
                 margin: 0rem 0.5rem;
                 height: 8px;
-                width: 5.8rem !important;
+                width: 50%;
             }
         }
 
-        .col {
+        .row {
+          .col {
+            &:first-of-type {
+              padding-right: 0px;
+            }
+
+            &:last-of-type {
+              padding-left: 0px;
+            }
+          }
+        }
+
+        .col {            
             &:last-of-type {
                 text-align: right;
             }
@@ -57,38 +75,157 @@
         }
     }
 
-    .timeSpent {
-        background: $WHITE;
-        padding: 1rem;
-        border-radius: 1rem;
+    // .time-spent {
+    //   ul {
+    //     display: flex;
+    //     justify-content: space-between;
+    //     padding: 0;
+    //     margin: 1.5rem 0rem;
+    //     list-style-type: none;
 
-        .resultHeading {
-            padding: 0rem 1.5rem;
-            .col {
-                &:last-of-type {
-                    text-align: right;
-                }
-            }
-        }
+    //     li {
+    //       .circle {
+    //         display: inline-block;
+    //         width: 10px;
+    //         height: 10px;
+    //         border-radius: 6px;
+    //         margin-right: 5px;
+    //       }
+    //     }
 
-        tr {
-            th {
-                color: $GREY;
-            }
-            
-            &:first-of-type {
-                line-height: 4;
-            }
-        }
-        
-        .resultsProgress {
-            transform: matrix(0, -1, -1, 0, 0, 0);
-            background: linear-gradient(to right, red 20%, blue 20%, blue 50%,yellow 50%,yellow 60% ,green 0);
-            vertical-align: middle;
-            margin: 0rem 1.5rem;
-            height: 5px;
-            width: 5.8rem !important;
-            border-radius: 5px;
-        }
+    //     .progress {
+    //       li {
+    //         span {
+    //           display: block;
+    //           .day {
+    //             color: $GREY
+    //           }
+
+    //           .bar {
+    //             width: 5px;
+    //             height: 12rem;
+    //             background-color: aliceblue;
+    //             margin: 23px auto;
+    //             border-radius: 3px;
+
+    //             .vocabulary {
+    //               border-bottom-left-radius: 3px;
+    //               border-bottom-right-radius: 3px;
+    //             }
+
+    //             .writing {
+    //               border-bottom-left-radius: 3px;
+    //               border-bottom-right-radius: 3px;
+    //             }
+    //           }
+    //         }
+    //       }
+    //     }
+    //   }
+
+    //   .header {
+    //     span {
+    //       .duration {
+    //         border: none;
+    //         cursor: pointer;
+    //         outline: none;
+    //       }
+    //     }
+    //   }
+    // }
+
+    .time-spent ul {
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        margin: 1.5rem 0rem;
+        list-style-type: none;
+      }
+      
+      .time-spent ul.progress li span {
+        display: block;
+      }
+
+      .time-spent ul.progress li span.day {
+        color: $GREY
+      }
+      
+      .time-spent ul.progress li span.bar {
+        width: 5px;
+        height: 12rem;
+        background-color: aliceblue;
+        margin: 23px auto;
+        border-radius: 3px;
+      }
+      
+      .vocabulary {
+        background-color: #ff808b;
+      }
+      
+      .grammar {
+        background-color: #4d4cac;
+      }
+      
+      .listening {
+        background-color: #5e81f4;
+      }
+      
+      .writing {
+        background-color: #c8c9e9;
+      }
+      
+      .time-spent .header span .duration {
+        border: none;
+        cursor: pointer;
+        outline: none;
+      }
+      
+      .time-spent ul.progress li span.bar .vocabulary {
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+      }
+      
+      .time-spent ul.progress li span.bar .writing {
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+      }
+      
+      .time-spent ul li span.circle {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 6px;
+        margin-right: 5px;
+      }
+}
+
+
+@include lg {
+  .container {
+    
+    .col-lg-5 {
+      width: 40%;
     }
+
+    .resultsData {
+      .unitDetails {
+        width: fit-content;
+      }
+    }
+  }
+}
+
+@include md {
+  .container { 
+    .col-lg-5 {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    // .resultsData {
+    //   .unitDetails {
+    //     width: fit-content;
+    //   }
+    // }
+  } 
 }

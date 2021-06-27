@@ -14,12 +14,14 @@ $WHITE_SHADE: #FDFDFE;
 $MISCHKA: #DCDCE5;
 $GREY: #A2A2C2;
 
-// $colorList: "BLACK_RUSSIAN, WHITE, WHITE_RGBA, BLUE_MAGENTA, MEDIUM_LIGHT_BLUE, WEWAK, 
-//             CORNFLOWER_BLUE, AMOUR, LAVENDER_BLUE, WHISPER, LIGHT_BLUE, LAVENDER, 
-//             WHITE_SHADE, MISCHKA, GREY"; 
 
-// @each $var in $colorList {
-//     .C-#{$var} {
-//         color: $ + $var;
-//     }
-// }
+
+$colorList: "BLACK_RUSSIAN", "WHITE", "WHITE_RGBA", "BLUE_MAGENTA", "MEDIUM_LIGHT_BLUE", "WEWAK", 
+            "CORNFLOWER_BLUE", "AMOUR", "LAVENDER_BLUE", "WHISPER", "LIGHT_BLUE", "LAVENDER", 
+            "WHITE_SHADE", "MISCHKA", "GREY"; 
+
+@each $var in $colorList {
+    .C-#{$var} {
+        color: '$' + $var;
+    }
+}

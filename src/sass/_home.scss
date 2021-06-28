@@ -6,6 +6,10 @@
 //     }
 // }
 
+.rowClass {
+    place-content: space-between;
+}
+
 section {
     margin-top: 2rem;
     background-color: $LIGHT_BLUE;
@@ -13,6 +17,10 @@ section {
     &:last-of-type {
         margin-bottom: 2rem;
     }
+}
+
+img {
+    width: 1.2rem;
 }
 
 @mixin cards($color) {

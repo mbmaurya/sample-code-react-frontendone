@@ -1,10 +1,10 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import signOut from '../images/sign-out.svg';
-import profileImg from '../images/Profile.svg';
-import reminders from '../images/reminders.svg';
-import AlertImage from '../images/Alert.svg';
-import MessageImage from '../images/Message.svg';
+import signOut from '../../images/sign-out.svg';
+import profileImg from '../../images/Profile.svg';
+import reminders from '../../images/reminders.svg';
+import AlertImage from '../../images/Alert.svg';
+import MessageImage from '../../images/Message.svg';
 
 function Profile() {
 

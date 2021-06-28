@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import rightArrow from '../images/right_arrow.svg';
-import downArrow from '../images/down_arrow.svg';
+import rightArrow from '../../images/right_arrow.svg';
+import downArrow from '../../images/down_arrow.svg';
 function LatestResults() {
 
     const CTAheading = {

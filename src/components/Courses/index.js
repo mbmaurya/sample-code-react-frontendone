@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import rightArrow from '../images/right_arrow_w.svg';
-import arrowRight from '../images/right_arrow.svg';
+import rightArrow from '../../images/right_arrow_w.svg';
+import arrowRight from '../../images/right_arrow.svg';
 
 function Courses() {
 

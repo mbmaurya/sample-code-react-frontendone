@@ -16,13 +16,19 @@
 
         .alignItems {
             align-self: center;
+            margin-bottom: 1.5rem;
+            padding: 0%;
+            h4 {
+                margin: 0;
+                font-weight: 400;
+            }
         }
 
         .align_img {
             position: absolute;
             top: -4.2rem;
             width: 160px;
-            height: 165px;
+            height: 160px;
         }
     }
 
@@ -55,3 +61,37 @@
 //         }
 //     }
 // }
+
+@include sm {
+    .greetContainer {
+        .align_img {
+            right: 0%;
+        }
+    }
+}
+
+@include rwd(421) {
+    .greetContainer {
+        .align_img {
+            top: -3.2rem !important;
+        }
+    }
+}
+
+@include rwd(380) {
+    .greetContainer {
+        .align_img {
+            top: -2.5rem !important;
+            right: 0.2rem !important;
+            width: 122px !important;
+        }
+    }
+}
+
+@include rwd(320) {
+    .greetContainer {
+        .align_img {
+            top: 0rem !important;
+        }
+    }
+}

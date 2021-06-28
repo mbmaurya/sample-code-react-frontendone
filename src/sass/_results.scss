@@ -62,6 +62,7 @@
         .col {            
             &:last-of-type {
                 text-align: right;
+                place-self: center;
             }
         }
     }

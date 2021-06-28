@@ -13,8 +13,8 @@ function Home() {
     }
 
     const CTAcontent = {
-        part1: "You’ve learned 80% of your goal this week! Keep it up and improve your results!",
-        part2: ""
+        part1: "You’ve learned 80% of your goal this week!",
+        part2: "Keep it up and improve your results!"
     }
 
     return (

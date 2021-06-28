@@ -12,6 +12,10 @@
 
 .sectionHeading {
     .col {
+        p {
+            margin-top: 0px;
+        }
+        
         &:last-of-type {
             text-align: right;
         }
@@ -19,26 +23,33 @@
 }
 
 .coursesCard {
+    width: 32%;
     .row {
         margin: 0rem;
 
         .placeCode {
             place-self: center;
+            padding: 0%;
         }
 
-        .childContent {
-            margin: 0rem 1rem;
-            .pContent1 {
-                @extend .pContent;
-                opacity: 0.8;
-                font-size: 12px;
-            }
-            
-            .pContent2 {
-                @extend .pContent;
-            }
+        .courseName {
+            margin-left: 1rem;
         }
 
+        .col-lg-9 {
+            padding-right: 0%;
+        }
+        
+        .pContent1 {
+            @extend .pContent;
+            opacity: 0.8;
+            font-size: 12px;
+        }
+        
+        .pContent2 {
+            @extend .pContent;
+        }
+        
         .cardChild1 {
             padding: 1rem !important;
             color: $WHITE;
@@ -48,7 +59,10 @@
         .arrow {
             display: flex;
             flex-direction: column-reverse;
-            margin-left: 4rem;
+            padding: 0%;
+            align-items: flex-end;
+            margin-inline-start: auto;
+            contain: size;
         }
     }
 }
@@ -66,4 +80,31 @@
 .coursesCard3 {
     @extend .coursesCard;
     @include cards($WEWAK);
+}
+
+
+@include lg {
+    .coursesCard {
+        .row {
+            .arrow {
+                width: auto;
+            }
+        }
+    }
+}
+
+@include md {
+    .coursesCard {
+        width: auto;
+    }
+}
+
+@include sm {
+    .coursesData {
+        flex-direction: column;
+
+        .coursesCard {
+            margin-bottom: 1rem;
+        }
+    }
 }

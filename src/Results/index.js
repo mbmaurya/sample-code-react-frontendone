@@ -27,11 +27,67 @@ function LatestResults() {
         },
     }
 
+    const weekData = {
+        part1: {
+            day: "Mon",
+            writing: { height: "25%" },
+            listening: { height: "25%" },
+            grammar: { height: "20%" },
+            vocabulary: { height: "30%" }
+        },
+        part2: {
+            day: "Tue",
+            writing: { height: "30%" },
+            listening: { height: "10%" },
+            grammar: { height: "40%" },
+            vocabulary: { height: "15%" }
+        },
+        part3: {
+            day: "Wed",
+            writing: { height: "15%" },
+            listening: { height: "30%" },
+            grammar: { height: "15%" },
+            vocabulary: { height: "40%" }
+        },
+        part4: {
+            day: "Thu",
+            writing: { height: "10%" },
+            listening: { height: "50%" },
+            grammar: { height: "35%" },
+            vocabulary: { height: "5%" }
+        },
+        part5: {
+            day: "Fri",
+            writing: { height: "15%" },
+            listening: { height: "20%" },
+            grammar: { height: "35%" },
+            vocabulary: { height: "30%" }
+        },
+        part6: {
+            day: "Sat",
+            writing: { height: "30%" },
+            listening: { height: "20%" },
+            grammar: { height: "20%" },
+            vocabulary: { height: "30%" }
+        },
+        part7: {
+            day: "Sun",
+            writing: { height: "20%" },
+            listening: { height: "30%" },
+            grammar: { height: "30%" },
+            vocabulary: { height: "20%" }
+        }
+    }
+
     const resultList = [];
-    const weekList = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+    const weekList = [];
 
     Object.entries(CTAheading).map(([key, value]) => {
         return resultList.push(value);
+    })
+
+    Object.entries(weekData).map(([key, value]) => {
+        return weekList.push(value);
     })
 
     console.log("resultList: ", resultList[0].results);
@@ -54,12 +110,12 @@ function LatestResults() {
                                 {Array.from(resultList).map((element, index) => (
                                     <div className="resultsData">
                                         <Row>
-                                            <Col>
+                                            <Col lg={7} className="unitDetails">
                                                 <span className="unitNo">{element.results.split("-")[0] + "-"}</span>
                                                 <span className="unitName">{element.results.split("-")[1]}</span>
                                             </Col>
                                             <Col>
-                                                <progress max="100" value="50"></progress>
+                                                <progress max="100" value={element.unit}></progress>
                                                 {element.unit >= 40 ? <span className="unitColor">{element.unit + "%"}</span> : <span className="unitColor1">{element.unit + "%"}</span>}
                                             </Col>
                                         </Row>
@@ -68,9 +124,9 @@ function LatestResults() {
                             </div>
                         </div>
                     </Col>
-                    <Col lg={7}>
-                        <div className="timeSpent">
-                            <Row className="resultHeading">
+                    <Col>
+                        <div className="timeSpent results">
+                            <Row>
                                 <Col>
                                     <p>Time Spent on Learning</p>
                                 </Col>
@@ -78,28 +134,41 @@ function LatestResults() {
                                     <p>Last week <span><img src={downArrow} alt="" /></span></p>
                                 </Col>
                             </Row>
-                            <div>
-                                <table>
-                                    <tr>
-                                        <th className="C-WEWAK">Mon</th>
-                                        <th>Tue</th>
-                                        <th>Wed</th>
-                                        <th>Thu</th>
-                                        <th>Fri</th>
-                                        <th>Sat</th>
-                                        <th>Sun</th>
-                                    </tr>
-                                    <br /><br />
-                                    <tr>
-                                        <td className="resultsProgress"></td>
-                                        <td className="resultsProgress"></td>
-                                        <td className="resultsProgress"></td>
-                                        <td className="resultsProgress"></td>
-                                        <td className="resultsProgress"></td>
-                                        <td className="resultsProgress"></td>
-                                        <td className="resultsProgress"></td>
-                                    </tr>
-                                </table>
+                            <div className="time-spent">
+                                <div className="body">
+                                    <ul className="progress">
+                                        {Array.from(weekList).map((element, index) => (
+                                            <li>
+                                                <span className="day">{element.day}</span>
+                                                <span className="bar">
+                                                    <span className="writing" style={element.writing}></span>
+                                                    <span className="listening" style={element.listening}></span>
+                                                    <span className="grammar" style={element.grammar}></span>
+                                                    <span className="vocabulary" style={element.vocabulary}></span>
+                                                </span>
+                                            </li>
+                                        ))}
+                                    </ul>
+
+                                    <ul className="subject">
+                                        <li>
+                                            <span className="circle vocabulary"></span>
+                                            <span className="text">Vocabulary</span>
+                                        </li>
+                                        <li>
+                                            <span className="circle grammar"></span>
+                                            <span className="text">Grammar</span>
+                                        </li>
+                                        <li>
+                                            <span className="circle listening"></span>
+                                            <span className="text">Listening</span>
+                                        </li>
+                                        <li>
+                                            <span className="circle writing"></span>
+                                            <span className="text">Writing</span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </Col>

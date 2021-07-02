@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, { useState, useRef } from 'react';
 import Media from 'react-media';
 import { Col, Container, Row } from 'react-bootstrap';
 import Greetings from '../Greetings/index.js';
@@ -20,7 +20,7 @@ import { ReactComponent as MenuIcon } from '../../images/menu-icon.svg';
 
 function Home() {
 
-    const [selectedTab, setSelectedTab] = useState("");
+    const [selectedTab, setSelectedTab] = useState("Dashboard");
     const [mobileMenu, toggleMobileMenu] = useState(false);
     const [profileMenu, toggleProfileMenu] = useState(false);
     const toggleMenuRef = useRef(null);
@@ -36,85 +36,110 @@ function Home() {
     }
 
 
-    const menuData = {
-        part1: {
+    const menuList = [
+        {
             image: Logo,
             title: "Stringle",
             closebtn: "x"
         },
-        part2: {
+        {
             image: Dashboard,
             title: "Dashboard"
         },
-        part3: {
+        {
             image: Classes,
             title: "Classes"
         },
-        part4: {
+        {
             image: Resources,
             title: "Resources"
         },
-        part5: {
+        {
             image: LearningPlan,
             title: "Learning Plan"
         },
-        part6: {
+        {
             image: Chat,
             title: "Chat"
         },
-        part7: {
+        {
             image: Settings,
             title: "Settings"
-        },
-    }
+        }
+    ]
 
     const SidebarMenu = () => {
         return <Col lg={2} className="sidebarCol">
-                    <div>
-                        <table>
-                            {Array.from(menuList).map((element, index) => (
-                                <tr key={index} data-item={element.title} onClick={() => setMenuSelected(element.title)}>
-                                    <td>
-                                        {index === 0 ? <img className="logoImg" src={element.image} /> : <img src={element.image} />}
-                                    </td>
-                                    <td>{element.title}</td>
-                                    <Media queries={{ medium: { minWidth: 992 } }}>
-                                        {matches =>
-                                            matches.medium ? (
-                                                ""
-                                            ) : element.closebtn ? <td className = "closeBtn" onClick={() => toggleMobileMenu(!mobileMenu)}>{element.closebtn}</td> : ""
-                                        }
-                                    </Media>
-                                </tr>
-                            ))}
-                        </table>
-                    </div>
+            <div>
+                <Media queries={{ medium: { minWidth: 992 } }}>
+                    {matches =>
+                        matches.medium ? (
+                            ""
+                        ) : <p className="closeBtn" onClick={() => {
+                            toggleMobileMenu();
+                            setSelectedTab("Dashboard");
+                        }
+                        }>x</p>
+                    }
 
-                    <section className="alignUpgrade">
-                        <span>
-                            <img className="upgradeImg" src={Upgrade} alt="upgrade" />
-                        </span>
+                </Media>
 
-                        <p>Upgrade to <span>PRO</span> for more resources</p>
+                {/* Tab section */}
 
-                        <button className="button">Upgrade</button>
-                    </section>
-                </Col>
+                <ul>
+                    {Array.from(menuList).map((element, index) => (
+                        <li key={index} className={selectedTab === 'Stringle' ? setSelectedTab("Dashboard") : selectedTab === element.title ? 'active' : ''} data-item={element.title} onClick={() => setMenuSelected(element.title)}>
+                            <span>
+                                {index === 0 ? <img className="logoImg" src={element.image} /> : <img src={element.image} />}
+                            </span>
+                            <span>{element.title}</span>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
+            {/* Upgrade pro section */}
+            <section className="alignUpgrade">
+                <span>
+                    <img className="upgradeImg" src={Upgrade} alt="upgrade" />
+                </span>
+                <p>Upgrade to <span>PRO</span> for more resources</p>
+                <button className="button">Upgrade</button>
+            </section>
+        </Col>
     }
 
-    const menuList = [];
-    Object.entries(menuData).map(([key, value]) => {
-        return menuList.push(value);
-    })
-
     const setMenuSelected = (value) => {
-        console.log('We need to get the details for ', value);
         setSelectedTab(value);
+    }
+
+    const sidebarNav = () => {
+        switch (selectedTab) {
+            case "Dashboard":
+                return <Container className="col-lg-7 containerWidth">
+                    <section className="greetings">
+                        <Container>
+                            <div className="alignDiv">
+                                <span className="dateClass">20 Sep 2020, Monday</span>
+                                <span className="search"><img src={search} alt="" /></span>
+                            </div>
+                        </Container>
+                    </section>
+                    <Greetings heading={CTAheading} content={CTAcontent} image={imgGreeting} />
+                    <Results />
+                    <Courses />
+                </Container>
+            default:
+                return <Container className="col-lg-7 containerWidth">
+                    <p>This is {selectedTab}</p>
+                </Container>
+        }
     }
 
     return (
         <React.Fragment>
             <Row className="rowClass">
+                {/* Media query for left pane responsive when minWidth is 992 */}
                 <Media queries={{ medium: { minWidth: 992 } }}>
                     {matches =>
                         matches.medium ? (
@@ -126,74 +151,32 @@ function Home() {
                                 </span>
 
                                 {
-                                    mobileMenu ?
-                                        <SidebarMenu />
-                                        : 
-                                        ""
+                                    mobileMenu ? <SidebarMenu /> : ""
                                 }
                             </div>
                         )
                     }
                 </Media>
 
-                {/* Mid section */}
+                {/* Mid section start */}
 
-                {selectedTab === "Dashboard" ? 
-                    <Container className="col-lg-7 containerWidth">
-                        <section className="greetings">
-                            <Container>
-                                <div className="alignDiv">
-                                    <span className="dateClass">20 Sep 2020, Monday</span>
-                                    <span className="search"><img src={search} alt="" /></span>
-                                </div>
-                            </Container>
-                        </section>
-                        <Greetings heading={CTAheading} content={CTAcontent} image={imgGreeting} />
-                        <Results />
-                        <Courses />
-                    </Container> : 
+                {sidebarNav()}
 
-                    selectedTab === "Classes" ? 
-                        <Container className="col-lg-7 containerWidth">
-                            <p>This is Classes</p>
-                        </Container> :
+                {/* Mid section end */}
 
-                    selectedTab === "Resources" ?
-                        <Container className="col-lg-7 containerWidth">
-                            <p>This is Resources</p>
-                        </Container> : 
-                    
-                    selectedTab === "Learning Plan" ?
-                        <Container className="col-lg-7 containerWidth">
-                            <p>This is Learning Plan</p>
-                        </Container> : 
-                    
-                    selectedTab === "Chat" ?
-                        <Container className="col-lg-7 containerWidth">
-                            <p>This is Chat</p>
-                        </Container> : 
-                    
-                    selectedTab === "Settings" ?
-                        <Container className="col-lg-7 containerWidth">
-                            <p>This is Settings</p>
-                        </Container> : null
-                }
-
+                {/* Media query for right pane responsive when minWidth is 992 */}
                 <Media queries={{ medium: { minWidth: 992 } }}>
                     {matches =>
                         matches.medium ? (
                             <Profile />
                         ) : (
-                            <div ref={toggleMenuRef}>
-                                <span className="toggle-menu">
+                            <div className="toggle-menu-prof" ref={toggleMenuRef}>
+                                <span className="toggle-prof">
                                     <button onClick={() => toggleProfileMenu(!profileMenu)}><ProfileIcon /></button>
                                 </span>
 
                                 {
-                                    profileMenu ?
-                                        <Profile />
-                                        : 
-                                        ""
+                                    profileMenu ? <Profile /> : ""
                                 }
                             </div>
                         )

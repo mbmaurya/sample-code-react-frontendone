@@ -4,93 +4,80 @@ import rightArrow from '../../images/right_arrow.svg';
 import downArrow from '../../images/down_arrow.svg';
 function LatestResults() {
 
-    const CTAheading = {
-        part1: {
+    const resultList = [
+        {
             results: "Unit 5 - Technology",
             unit: "25"
         },
-        part2: {
+        {
             results: "Unit 12 - Ecology",
             unit: "44"
         },
-        part3: {
+        {
             results: "Unit 9 - Real estate",
             unit: "40"
         },
-        part4: {
+        {
             results: "Unit 8 - Education",
             unit: "15"
         },
-        part5: {
+        {
             results: "Unit 16 - Job market",
             unit: "75"
-        },
-    }
+        }
+    ]
 
-    const weekData = {
-        part1: {
+    const weekList = [
+        {
             day: "Mon",
             writing: { height: "25%" },
             listening: { height: "25%" },
             grammar: { height: "20%" },
             vocabulary: { height: "30%" }
         },
-        part2: {
+        {
             day: "Tue",
             writing: { height: "30%" },
             listening: { height: "10%" },
             grammar: { height: "40%" },
             vocabulary: { height: "15%" }
         },
-        part3: {
+        {
             day: "Wed",
             writing: { height: "15%" },
             listening: { height: "30%" },
             grammar: { height: "15%" },
             vocabulary: { height: "40%" }
         },
-        part4: {
+        {
             day: "Thu",
             writing: { height: "10%" },
             listening: { height: "50%" },
             grammar: { height: "35%" },
             vocabulary: { height: "5%" }
         },
-        part5: {
+        {
             day: "Fri",
             writing: { height: "15%" },
             listening: { height: "20%" },
             grammar: { height: "35%" },
             vocabulary: { height: "30%" }
         },
-        part6: {
+        {
             day: "Sat",
             writing: { height: "30%" },
             listening: { height: "20%" },
             grammar: { height: "20%" },
             vocabulary: { height: "30%" }
         },
-        part7: {
+        {
             day: "Sun",
             writing: { height: "20%" },
             listening: { height: "30%" },
             grammar: { height: "30%" },
             vocabulary: { height: "20%" }
         }
-    }
-
-    const resultList = [];
-    const weekList = [];
-
-    Object.entries(CTAheading).map(([key, value]) => {
-        return resultList.push(value);
-    })
-
-    Object.entries(weekData).map(([key, value]) => {
-        return weekList.push(value);
-    })
-
-    console.log("resultList: ", resultList[0].results);
+    ]
 
     return (
         <section>

@@ -1,7 +1,11 @@
 .sidebarCol {
-    height: auto;
-    background-color: snow;
+    width: 23rem;
+    background-color: $WHITE_SHADE;
     padding-right: 0px;
+
+    .active {
+        border-right: 2px solid $CORNFLOWER_BLUE;
+    }
 
     .alignUpgrade {
         background-color: #f5f5fb;
@@ -35,21 +39,27 @@
         }
     }
 
-    table {
-        margin: auto;
-        tr {
+    ul {
+        // width: 100%;
+        border-collapse: collapse;
+        list-style-type: none;
+        margin: 5rem 0rem 7rem; /* 80px, 112px */
+
+        li {
             cursor: pointer;
-            line-height: 4;
+            // line-height: 4;
+            display: block;
+            margin: 0rem 0rem 3.375rem 0rem; /* 54px */
             &:first-of-type {
                 //line-height: 8rem;
                 font-size: 27px;
                 font-weight: bold;
+            }
 
-                .closeBtn{
-                    position: absolute;
-                    top: -30px;
-                    right: 18px;
-                    font-size: 26px;
+            span {
+
+                &:last-of-type {
+                    margin-left: 1rem;
                 }
             }
 
@@ -58,8 +68,7 @@
             }
 
             img {
-                display: list-item;
-                line-height: 8;
+                vertical-align: text-top;
             }
         }   
     }
@@ -81,5 +90,15 @@
 }
 
 @include lg{
-    
+    .sidebarCol {    
+        position: absolute;
+        z-index: 1;
+
+        .closeBtn{
+            position: absolute;
+            top: -7px;
+            right: 2rem;
+            font-size: 26px;
+        }
+    }
 }

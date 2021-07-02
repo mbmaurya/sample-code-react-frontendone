@@ -24,6 +24,13 @@
             outline: none;
         }
     }
+    .toggle-prof{
+        @extend .toggle-menu;
+        top:0;
+        right: -2.5rem;
+        position: absolute;
+    }
+
 }
 
 section {
@@ -37,6 +44,12 @@ section {
 
 img {
     width: 1.2rem;
+}
+
+.toggle-menu-prof {
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 @mixin cards($color) {
@@ -71,6 +84,6 @@ img {
 
 @include sm {
     .col-lg-7 {
-        margin: 1rem;
+        margin: 0rem 1rem 0rem 2rem;
     }
 }

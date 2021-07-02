@@ -8,51 +8,39 @@ import MessageImage from '../../images/Message.svg';
 
 function Profile() {
 
-    const courseProfileHeading = {
-        part1: {
+    const courseProfileList = [
+        {
             courseCode: "B2",
             course: "English",
             topic: "High Intermediate",
-            progressPercent: "50" 
+            progressPercent: "50"
         },
-        part2: {
+        {
             courseCode: "C1",
             course: "Spanish",
             topic: "Advanced",
             progressPercent: "80"
         }
-    }
+    ]
 
-    const reminderHeading = {
-        part1: {
+    const reminderHeadingList = [
+        {
             image: AlertImage,
             message: "Eng - Vocabulary test",
             date: "24 Sep 2019, Firday"
         },
-        part2: {
+        {
             image: MessageImage,
             message: "Eng - Send grammer homework",
             date: "29 Sep 2019, Wednesday"
         },
-        part3: {
+        {
             image: MessageImage,
             message: "Spanish - Send essay",
             date: "05 oct 2019, Monday"
         }
-    }
+    ]
 
-    const courseProfileList = [];
-    const reminderHeadingList = [];
-
-    Object.entries(courseProfileHeading).map(([key, value]) => {
-        return courseProfileList.push(value);
-    })
-
-    Object.entries(reminderHeading).map(([key, value]) => {
-        return reminderHeadingList.push(value);
-    })
-
-    
     return (
         <Container className="profileCont">
             <Row>
@@ -64,11 +52,11 @@ function Profile() {
                 </Col>
             </Row>
             <div className="alignProfile">
-                <img src={profileImg}/>
+                <img src={profileImg} />
                 <h3>Sadia Tasnim</h3>
                 <h5>Student</h5>
             </div>
-            
+
             <div className="profileCard">
                 {Array.from(courseProfileList).map((element, index) => (
                     <Row>

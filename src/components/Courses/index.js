@@ -5,32 +5,26 @@ import arrowRight from '../../images/right_arrow.svg';
 
 function Courses() {
 
-    const courseHeading = {
-        part1: {
+    const courseList = [
+        {
             courseCode: "B2",
             course: "Business English",
             topic: "Grammar",
             className: "coursesCard1"
         },
-        part2: {
+        {
             courseCode: "B2",
             course: "Common English",
             topic: "Phrasal Verbs",
             className: "coursesCard2"
         },
-        part3: {
+        {
             courseCode: "C1",
             course: "Business Spanish",
             topic: "Vocabulary",
             className: "coursesCard3"
         }
-    }
-
-    const courseList = [];
-
-    Object.entries(courseHeading).map(([key, value]) => {
-        return courseList.push(value);
-    })
+    ]
 
     return (
         <section>
